@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var dash_cooldown = 3.0
 @export var attack_duration = 0.5
 @export var attack_cooldown = 1.0
+@export var spear_speed = 500.0
 
 var can_dash = true
 var is_dashing = false
@@ -17,9 +18,12 @@ var is_attacking = false
 var attack_timer = 0.0
 var attack_cooldown_timer = 0.0
 
+var last_direction = Vector2.RIGHT
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_cooldown_bar = $DashCooldownBar
 @onready var attack_cooldown_bar = $AttackCooldownBar
+@onready var spear_scene = preload("res://scenes/objects/spear.tscn")
 
 func _ready():
 	# Set up progress bars
@@ -71,6 +75,7 @@ func _physics_process(delta):
 	# Normalize the direction vector to prevent faster diagonal movement
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
+		last_direction = direction  # Update last_direction when moving
 	
 	# Handle attack input
 	if Input.is_action_just_pressed("attack") and can_attack:
@@ -82,6 +87,8 @@ func _physics_process(delta):
 		attack_cooldown_timer = attack_cooldown
 		attack_cooldown_bar.value = 0
 		animated_sprite.play("attack")
+		# Spawn spear in the current movement direction
+		spawn_spear(direction)
 		return
 
 	# Handle dash input
@@ -106,3 +113,15 @@ func _physics_process(delta):
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
+
+## Spawns a spear that moves in the specified direction
+## @param direction: The direction vector for the spear to move in (will be normalized)
+func spawn_spear(direction: Vector2 = Vector2.ZERO) -> void:
+	if direction == Vector2.ZERO:
+		# If no direction is provided, use the last movement direction
+		direction = last_direction
+	
+	var spear = spear_scene.instantiate()
+	get_parent().add_child(spear)
+	spear.global_position = global_position
+	spear.spawn(direction)
