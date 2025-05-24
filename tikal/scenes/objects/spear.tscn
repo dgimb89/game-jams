@@ -4,25 +4,29 @@
 [ext_resource type="Script" uid="uid://cybbth7577l81" path="res://scripts/objects/spear.gd" id="2_spear"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xv5y"]
-size = Vector2(20.8163, 120)
+size = Vector2(24.4898, 160)
 
-[node name="Spear" type="Node2D"]
-scale = Vector2(1.3, 1.3)
+[node name="Spear" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 18
+gravity_scale = 0.0
 script = ExtResource("2_spear")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 4
-collision_mask = 2
-gravity_scale = 0.0
-freeze = true
+[node name="Spear23" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+rotation = 0.785398
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_0xoao")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(-6.5, 0)
+[node name="PhysicsCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
 scale = Vector2(2.45, -0.05)
 shape = SubResource("RectangleShape2D_8xv5y")
 
-[node name="Spear23" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(4.76837e-07, 0)
-rotation = 0.785398
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_0xoao")
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="PickupCollisionShape" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, 0)
+scale = Vector2(2.45, -0.05)
+shape = SubResource("RectangleShape2D_8xv5y")

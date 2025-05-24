@@ -389,11 +389,11 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 6
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+collision_mask = 59
 script = ExtResource("1_g2els")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0.999999, -28)
 scale = Vector2(2.35457, 2.03158)
 shape = SubResource("CapsuleShape2D_g2els")
@@ -411,4 +411,5 @@ custom_fill_color = Color(0, 0, 1, 1)
 [node name="AttackCooldownBar" parent="." instance=ExtResource("6_tuyoq")]
 offset_top = 20.0
 offset_bottom = 26.0
-custom_fill_color = Color(1, 0.490196, 0, 1)
+empty_color = Color(0.490196, 0, 0, 1)
+custom_fill_color = Color(0.490196, 0, 0, 1)

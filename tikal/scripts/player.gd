@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var dash_duration = 0.5
 @export var dash_cooldown = 3.0
 @export var attack_duration = 0.5
-@export var attack_cooldown = 1.0
+@export var attack_cooldown = 3.0
 @export var spear_speed = 500.0
 
 var can_dash = true
@@ -13,7 +13,7 @@ var is_dashing = false
 var dash_timer = 0.0
 var dash_cooldown_timer = 0.0
 
-var can_attack = true
+var has_spear = true
 var is_attacking = false
 var attack_timer = 0.0
 var attack_cooldown_timer = 0.0
@@ -45,11 +45,9 @@ func _physics_process(delta):
 			is_dashing = false
 	
 	# Handle attack cooldown
-	if not can_attack:
+	if attack_cooldown_timer > 0:
 		attack_cooldown_timer -= delta
 		attack_cooldown_bar.value = attack_cooldown - attack_cooldown_timer
-		if attack_cooldown_timer <= 0:
-			can_attack = true
 	
 	# Handle attack duration
 	if is_attacking:
@@ -78,12 +76,12 @@ func _physics_process(delta):
 		last_direction = direction  # Update last_direction when moving
 	
 	# Handle attack input
-	if Input.is_action_just_pressed("attack") and can_attack:
+	if Input.is_action_just_pressed("attack") and has_spear and attack_cooldown_timer <= 0:
 		is_dashing = false # cancel dash if it's active
 		can_dash = false # cannot dash while attacking
 		is_attacking = true
 		attack_timer = attack_duration
-		can_attack = false
+		has_spear = false
 		attack_cooldown_timer = attack_cooldown
 		attack_cooldown_bar.value = 0
 		animated_sprite.play("attack")
@@ -122,6 +120,10 @@ func spawn_spear(direction: Vector2 = Vector2.ZERO) -> void:
 		direction = last_direction
 	
 	var spear = spear_scene.instantiate()
+	spear.spear_picked_up.connect(_on_spear_picked_up)
 	get_parent().add_child(spear)
 	spear.global_position = global_position
 	spear.spawn(direction)
+
+func _on_spear_picked_up() -> void:
+	has_spear = true

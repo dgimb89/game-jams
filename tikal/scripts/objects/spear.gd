@@ -1,30 +1,36 @@
-extends Node2D
+extends RigidBody2D
 
-signal spawn_requested(direction: Vector2)
+signal spear_picked_up
 
-@onready var rigid_body = $RigidBody2D
-@export var stop_below_velocity = 50
+@export var stop_below_velocity = 1
 @export var initial_velocity_loss = 400  # Slower initial deceleration
 @export var max_velocity_loss = 1000      # Maximum deceleration
 @export var deceleration_curve = 1.0     # How quickly we reach max deceleration
 @export var spear_speed = 800.0
 
+@onready var area: Area2D = $Area2D
+
 func _ready():
-	# Unfreeze the rigid body when the spear is spawned
-	rigid_body.freeze = false
+	print_debug("Spear ready", self)
 
 func spawn(direction: Vector2) -> void:
 	direction = direction.normalized()
 	rotation = direction.angle()
 	
 	# Set the spear's velocity
-	if rigid_body:
-		rigid_body.linear_velocity = direction * spear_speed
+	linear_velocity = direction * spear_speed
+
+func retire_spear() -> void:
+	print_debug("Retiring spear", self)
+	linear_velocity = Vector2.ZERO
+	freeze = true
+	area.body_entered.connect(pickup)
+	print_debug("Body entered signal connected: ", area.body_entered.is_connected(pickup))
 
 func _physics_process(delta):
 	# If the spear is moving too slowly, stop it
-	if !rigid_body.freeze:
-		var current_velocity = rigid_body.linear_velocity
+	if !freeze:
+		var current_velocity = linear_velocity
 		var velocity_direction = current_velocity.normalized()
 		var current_speed = current_velocity.length()
 		
@@ -35,10 +41,13 @@ func _physics_process(delta):
 		
 		# Apply deceleration
 		var new_speed = max(0, current_speed - current_deceleration * delta)
-		rigid_body.linear_velocity = velocity_direction * new_speed
+		linear_velocity = velocity_direction * new_speed
 		
 		# Retire spear if it's moving too slowly
 		if new_speed < stop_below_velocity:
-			rigid_body.linear_velocity = Vector2.ZERO
-			rigid_body.freeze = true
-			print_debug("freeze ", rigid_body)
+			retire_spear()
+
+func pickup(_body):
+	print_debug("Picking up spear")  # Debug print
+	emit_signal("spear_picked_up")
+	queue_free()
