@@ -18,11 +18,19 @@ var attack_timer = 0.0
 var attack_cooldown_timer = 0.0
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var dash_cooldown_bar = $DashCooldownBar
+@onready var attack_cooldown_bar = $AttackCooldownBar
+
+func _ready():
+	# Set up progress bars
+	dash_cooldown_bar.max_value = dash_cooldown
+	attack_cooldown_bar.max_value = attack_cooldown
 
 func _physics_process(delta):
 	# Handle dash cooldown
 	if not can_dash:
 		dash_cooldown_timer -= delta
+		dash_cooldown_bar.value = dash_cooldown - dash_cooldown_timer
 		if dash_cooldown_timer <= 0:
 			can_dash = true
 	
@@ -35,6 +43,7 @@ func _physics_process(delta):
 	# Handle attack cooldown
 	if not can_attack:
 		attack_cooldown_timer -= delta
+		attack_cooldown_bar.value = attack_cooldown - attack_cooldown_timer
 		if attack_cooldown_timer <= 0:
 			can_attack = true
 	
@@ -71,6 +80,7 @@ func _physics_process(delta):
 		attack_timer = attack_duration
 		can_attack = false
 		attack_cooldown_timer = attack_cooldown
+		attack_cooldown_bar.value = 0
 		animated_sprite.play("attack")
 		return
 
@@ -80,6 +90,7 @@ func _physics_process(delta):
 		dash_timer = dash_duration
 		can_dash = false
 		dash_cooldown_timer = dash_cooldown
+		dash_cooldown_bar.value = 0
 	
 	# Set velocity based on direction and speed
 	var current_speed = speed * (dash_speed_multiplier if is_dashing else 1.0)

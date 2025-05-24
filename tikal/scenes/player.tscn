@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://cmpt8omchr3ar"]
+[gd_scene load_steps=60 format=3 uid="uid://cmpt8omchr3ar"]
 
 [ext_resource type="Texture2D" uid="uid://dvl2ce70y1cxk" path="res://assets/sprites/Knight Basic/Idle/Knight_Idle_dir7.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://b0ne5b3coeiia" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://73m7f86ms415" path="res://assets/sprites/Knight Basic/Run/Knight_Run_dir7.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://dwspqhdim4yah" path="res://assets/sprites/Knight Basic/Attack/Knight_Attack_dir7.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://0yhivqf5x2fs" path="res://assets/sprites/Knight Basic/Walk/Knight_Walk_dir7.png" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://b703neh08ms8c" path="res://scenes/objects/progress_bar.tscn" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 
@@ -402,3 +403,11 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_qhqgy")
 animation = &"attack"
 autoplay = "idle"
+
+[node name="DashCooldownBar" parent="." instance=ExtResource("6_tuyoq")]
+empty_color = Color(0, 0, 1, 1)
+custom_fill_color = Color(0, 0, 1, 1)
+
+[node name="AttackCooldownBar" parent="." instance=ExtResource("6_tuyoq")]
+offset_top = 20.0
+offset_bottom = 26.0
