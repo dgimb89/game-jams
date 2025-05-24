@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 300.0
+@export var speed = 250.0
 @export var dash_speed_multiplier = 4.0
 @export var dash_duration = 0.2
 @export var dash_cooldown = 3.0
@@ -9,6 +9,8 @@ var can_dash = true
 var is_dashing = false
 var dash_timer = 0.0
 var dash_cooldown_timer = 0.0
+
+@onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
 	# Handle dash cooldown
@@ -52,3 +54,11 @@ func _physics_process(delta):
 	
 	# Move the character
 	move_and_slide()
+	
+	# Update animation based on movement state
+	if is_dashing:
+		animated_sprite.play("dash")
+	elif direction != Vector2.ZERO:
+		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("idle")
