@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cumsc0igjquog"]
+
+[ext_resource type="PackedScene" uid="uid://cmpt8omchr3ar" path="res://scenes/player.tscn" id="1_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = -400.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv_2"]
+distance = 400.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv_3"]
+normal = Vector2(1, 0)
+distance = -400.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv_4"]
+normal = Vector2(1, 0)
+distance = 400.0
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_uwrxv")]
+z_index = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, -800)
+rotation = 3.14159
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv_2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv_3")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(800, 0)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_uwrxv_4")
+
+[node name="Camera2D" type="Camera2D" parent="."]

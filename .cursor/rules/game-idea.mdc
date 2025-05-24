@@ -1,0 +1,88 @@
+---
+description: 
+globs: tikal/**
+alwaysApply: false
+---
+# Mayan Arena Warrior Game Concept
+
+## Game Setting
+- Historical period: Maya civilization around Tikal
+- Visual style: Top-down 2D perspective
+- Setting: Ancient arena/gladiator pit with four gates for enemy spawning
+
+## Player Character
+### Visual Design
+- Mayan warrior with minimal armor
+- Decorative elements:
+  - Human/animal skull ornaments
+  - Bone and gold piercings
+  - Fur, leather, and animal skin clothing
+- Primary weapon: Spear
+
+## Core Gameplay Mechanics
+### Combat System
+1. Spear Combat
+   - Position character to line up multiple enemies
+   - Throw spear to pierce enemies in a line
+   - Retrieve spear by moving close to it
+   - Strategic positioning for optimal enemy engagement
+
+### Wave System
+1. 11 Progressive Waves
+   - Wave 11: 11 slow, weak snakes
+   - Waves 10-2: Various enemy types (to be designed)
+   - Wave 1: Final boss battle against rival tribe warrior
+
+### Arena Features
+1. Four Gates
+   - Random enemy spawning from different gates
+   - Strategic positioning to manage spawn points
+
+### Power-up System
+1. Single Power-up per Session
+   - Spawns once during the entire arena session
+   - Effect to be determined based on development time
+
+## Technical Requirements
+1. Enemy AI
+   - Pathfinding
+   - Dodging with increasingly good prediction for later waves (if there is time)
+
+2. Combat Mechanics
+   - Spear throwing physics
+   - Enemy hit detection
+   - Spear retrieve mechanic
+   - Auto-targeting closest enemy (with turn rate)
+
+3. Arena Management
+   - Boundaries / obstacle pyhysics
+   - Gate spawning logic
+   - Power-up spawn system (if there is time)
+
+## Art Style Guidelines
+1. Character Design
+   - Flat shaded SNES-style pixel art
+   - Visible decorative elements like skulls or talismans
+   - Hard-painted silhouette / pixel border for gameplay visibility
+
+2. Environment
+   - Ancient arena setting
+   - Mayan architectural elements
+   - Clear visual distinction for gates and arena boundaries
+
+## Sound Design
+1. Ambient
+   - Arena atmosphere
+   - Crowd sounds
+   - Environmental effects
+
+2. Combat
+   - Spear throwing/retrieval
+   - Enemy sounds
+   - Impact effects
+
+3. UI
+   - Main menu should show replay of previous arena fight in the background. (If there is time)
+   - Maybe option to watch a replay last arena battle in full screen? (If there is time)
+   - Wave progression
+   - Power-up activation with active timer

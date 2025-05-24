@@ -1,0 +1,82 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Godot Game Jam Project Structure
+
+## Project Organization
+
+### Directory Structure
+```
+project/
+├── scenes/           # All scene files (.tscn)
+│   ├── levels/      # Game levels
+│   ├── ui/          # UI scenes
+│   └── objects/     # Reusable game objects
+├── scripts/         # GDScript files (.gd)
+│   ├── autoload/    # Singleton scripts
+│   ├── objects/     # Object-specific scripts
+│   └── utils/       # Utility functions
+├── assets/          # Game assets
+│   ├── sprites/     # Images and sprites
+│   ├── audio/       # Sound effects and music
+│   └── fonts/       # Font files
+└── exports/         # Export configurations
+```
+
+## Best Practices
+
+### Scene Organization
+1. Keep scenes modular and reusable
+2. Use scene inheritance for similar objects
+3. Group related nodes logically
+4. Use descriptive node names
+
+### Scripting Guidelines
+1. Use type hints for better AI assistance:
+```gdscript
+extends Node2D
+
+var health: float = 100.0
+var player_name: String = "Player1"
+var inventory: Array[Item] = []
+```
+
+2. Document functions with comments:
+```gdscript
+## Handles player movement based on input
+## @param delta: Time since last frame
+func handle_movement(delta: float) -> void:
+    pass
+```
+
+3. Use signals for loose coupling:
+```gdscript
+signal health_changed(new_health: float)
+signal player_died
+```
+
+### Performance Tips
+1. Use object pooling for frequently spawned objects
+2. Implement proper scene loading/unloading
+3. Cache node references in _ready()
+4. Use yield() sparingly
+
+### Web Export Considerations
+1. Keep asset sizes small
+2. Use compressed textures
+3. Implement proper loading screens
+4. Test frequently in browser
+
+## Common Pitfalls
+1. Not using type hints (makes AI assistance harder)
+2. Over-complicating scene hierarchies
+3. Not implementing proper scene cleanup
+4. Ignoring web performance considerations
+
+## AI-Assisted Development Tips
+1. Keep scripts focused and single-purpose
+2. Use clear naming conventions
+3. Document complex logic
+4. Break down tasks into small, manageable chunks

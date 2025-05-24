@@ -1,0 +1,91 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Game Jam Development Strategy
+
+## Time Management (10-hour constraint)
+
+### Planning Phase (1 hour)
+1. Define core gameplay loop
+2. List essential features
+3. Create minimal viable product (MVP) scope
+4. Set up project structure
+
+### Development Phases
+1. Core Mechanics (3 hours)
+   - Basic player movement
+   - Essential game mechanics
+   - Simple UI
+
+2. Content Creation (3 hours)
+   - Level design
+   - Basic assets
+   - Sound effects
+
+3. Polish & Bug Fixing (2 hours)
+   - UI improvements
+   - Performance optimization
+   - Bug fixes
+
+4. Testing & Export (1 hour)
+   - Browser testing
+   - Export configuration
+   - Final adjustments
+
+## Development Priorities
+
+### Must Have (MVP)
+1. Core gameplay loop
+2. Basic controls
+3. Simple win/lose conditions
+4. Minimal UI
+
+### Nice to Have
+1. Sound effects
+2. Visual polish
+3. Additional levels
+4. Particle effects
+
+### Skip If Time Runs Out
+1. Complex animations
+2. Multiple levels
+3. Advanced features
+4. Extra game modes
+
+## AI-Assisted Development Workflow
+
+### Effective Prompts
+1. Be specific about requirements
+2. Include context about current implementation
+3. Ask for incremental improvements
+4. Request explanations for complex logic
+
+### Code Review Process
+1. Review AI suggestions before implementing
+2. Test changes immediately
+3. Keep track of implemented features
+4. Document any workarounds
+
+## Web Export Checklist
+
+### Pre-Export
+1. Test in Godot's web preview
+2. Verify asset loading
+3. Check performance
+4. Validate controls
+
+### Post-Export
+1. Test in Safari
+2. Verify loading times
+3. Check mobile compatibility
+4. Validate touch controls
+
+## Common Time-Saving Tips
+1. Use placeholder assets initially
+2. Implement features incrementally
+3. Don't spend too much time on perfect future-proof project setup
+4. Focus on gameplay over graphics
+5. Reuse code and assets when possible
+6. Keep scope manageable
