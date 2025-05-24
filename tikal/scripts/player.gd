@@ -1,14 +1,21 @@
 extends CharacterBody2D
 
 @export var speed = 250.0
-@export var dash_speed_multiplier = 4.0
-@export var dash_duration = 0.2
+@export var dash_speed_multiplier = 2.5
+@export var dash_duration = 0.5
 @export var dash_cooldown = 3.0
+@export var attack_duration = 0.5
+@export var attack_cooldown = 1.0
 
 var can_dash = true
 var is_dashing = false
 var dash_timer = 0.0
 var dash_cooldown_timer = 0.0
+
+var can_attack = true
+var is_attacking = false
+var attack_timer = 0.0
+var attack_cooldown_timer = 0.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -24,6 +31,21 @@ func _physics_process(delta):
 		dash_timer -= delta
 		if dash_timer <= 0:
 			is_dashing = false
+	
+	# Handle attack cooldown
+	if not can_attack:
+		attack_cooldown_timer -= delta
+		if attack_cooldown_timer <= 0:
+			can_attack = true
+	
+	# Handle attack duration
+	if is_attacking:
+		attack_timer -= delta
+		if attack_timer <= 0:
+			is_attacking = false
+		# Short circuit - if attacking, only update animation and return
+		animated_sprite.play("attack")
+		return
 	
 	# Get input direction from defined input actions
 	var direction = Vector2.ZERO
@@ -41,6 +63,17 @@ func _physics_process(delta):
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
 	
+	# Handle attack input
+	if Input.is_action_just_pressed("attack") and can_attack:
+		is_dashing = false # cancel dash if it's active
+		can_dash = false # cannot dash while attacking
+		is_attacking = true
+		attack_timer = attack_duration
+		can_attack = false
+		attack_cooldown_timer = attack_cooldown
+		animated_sprite.play("attack")
+		return
+
 	# Handle dash input
 	if Input.is_action_just_pressed("dash") and can_dash and direction != Vector2.ZERO:
 		is_dashing = true
