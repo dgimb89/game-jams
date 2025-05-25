@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8tc7on3shbb3"]
 
-[ext_resource type="Texture2D" uid="uid://c4yxtng15cubv" path="res://assets/spear_23.png" id="1_0xoao"]
+[ext_resource type="Texture2D" uid="uid://c4yxtng15cubv" path="res://assets/sprites/spear_23.png" id="1_0xoao"]
 [ext_resource type="Script" uid="uid://cybbth7577l81" path="res://scripts/objects/spear.gd" id="2_spear"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xv5y"]

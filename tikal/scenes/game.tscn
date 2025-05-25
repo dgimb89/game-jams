@@ -1,52 +1,316 @@
-[gd_scene load_steps=6 format=3 uid="uid://cumsc0igjquog"]
+[gd_scene load_steps=7 format=3 uid="uid://cumsc0igjquog"]
 
 [ext_resource type="PackedScene" uid="uid://cmpt8omchr3ar" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://c2otnlbmtfhml" path="res://assets/sprites/Tileset-Terrain2.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://cude4c8ul8t6g" path="res://assets/sprites/wall-8 - 2 tiles tall-transparency.png" id="3_lnu2h"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
-distance = -400.0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
+texture = ExtResource("2_yqjtg")
+texture_region_size = Vector2i(32, 32)
+9:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+26:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+30:8/0 = 0
+31:8/0 = 0
+32:8/0 = 0
+33:8/0 = 0
+34:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+26:9/0 = 0
+27:9/0 = 0
+28:9/0 = 0
+29:9/0 = 0
+30:9/0 = 0
+31:9/0 = 0
+32:9/0 = 0
+33:9/0 = 0
+34:9/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+29:10/0 = 0
+30:10/0 = 0
+31:10/0 = 0
+32:10/0 = 0
+33:10/0 = 0
+34:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+22:11/0 = 0
+25:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+30:11/0 = 0
+31:11/0 = 0
+32:11/0 = 0
+33:11/0 = 0
+34:11/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+26:12/0 = 0
+27:12/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+25:13/0 = 0
+26:13/0 = 0
+27:13/0 = 0
+11:4/size_in_atlas = Vector2i(3, 3)
+11:4/0 = 0
+9:1/size_in_atlas = Vector2i(4, 2)
+9:1/0 = 0
+13:1/size_in_atlas = Vector2i(4, 2)
+13:1/0 = 0
+14:0/0 = 0
+11:0/0 = 0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv_2"]
-distance = 400.0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
+texture = ExtResource("3_lnu2h")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+2:4/size_in_atlas = Vector2i(1, 2)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 15.9622, 24.9659, -16.0462, 25.4193)
+1:4/size_in_atlas = Vector2i(1, 2)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.04414, -31.5805, 9.55096, -30.8435, 9.7262, -16, 15.5094, -16, 15.5094, 26.287, -4.99454, 28.0395)
+3:4/size_in_atlas = Vector2i(1, 2)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.0974, -17.1415, -9.79003, -17.3243, -10.1081, -32.0414, 6.08982, -31.8403, 5.34391, -1.67479, 4.78448, 25.8544, -16.0462, 25.4193)
+4:3/size_in_atlas = Vector2i(1, 2)
+4:3/0 = 0
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.34394, -16, 5.92894, -16, 6.04229, 16, -9.29275, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.02025, -16, 9.30748, -16, 9.33307, 16, -5.87034, 16)
+0:3/size_in_atlas = Vector2i(1, 2)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv_3"]
-normal = Vector2(1, 0)
-distance = -400.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv_4"]
-normal = Vector2(1, 0)
-distance = 400.0
+[sub_resource type="TileSet" id="TileSet_uwrxv"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 23
+sources/2 = SubResource("TileSetAtlasSource_yqjtg")
+sources/4 = SubResource("TileSetAtlasSource_lbhrr")
 
 [node name="Game" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 3
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_uwrxv")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(0, -800)
-rotation = 3.14159
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_uwrxv_2")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("WorldBoundaryShape2D_uwrxv_3")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(800, 0)
-rotation = 3.14159
-shape = SubResource("WorldBoundaryShape2D_uwrxv_4")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+rotation = -0.00218153
+tile_set = SubResource("TileSet_uwrxv")
+format = 2
+layer_0/tile_data = PackedInt32Array(851967, 131076, 4, 851966, 131076, 4, 851965, 131076, 4, 851964, 131076, 4, 851963, 131076, 4, 851962, 131076, 4, 851961, 131076, 4, 851960, 131076, 4, 851959, 131076, 4, 851958, 131076, 4, 851957, 131076, 4, 851956, 131076, 4, 786432, 131076, 4, 786433, 131076, 4, 786434, 131076, 4, 786435, 131076, 4, 786436, 131076, 4, 786437, 131076, 4, 786438, 131076, 4, 786439, 131076, 4, 786440, 131076, 4, 786441, 131076, 4, 786442, 131076, 4, 786443, 131076, 4, 786444, 262148, 3, 851955, 4, 3, 720908, 262148, 2, 655372, 262148, 2, 589836, 262148, 2, 524300, 262148, 2, 458764, 262148, 2, 393228, 262148, 2, 327692, 262148, 2, 262156, 262148, 2, 196620, 262148, 2, 131084, 262148, 2, 65548, 262148, 2, 12, 262148, 2, -65524, 262148, 2, -131060, 262148, 2, -196596, 262148, 2, -262132, 262148, 2, -327668, 262148, 2, -393204, 262148, 2, -458740, 262148, 2, -524276, 262148, 2, -589812, 262148, 2, -655348, 262148, 2, -720884, 262148, 2, -786420, 262148, 2, 786419, 4, 2, 720883, 4, 2, 655347, 4, 2, 589811, 4, 2, 524275, 4, 2, 458739, 4, 2, 393203, 4, 2, 327667, 4, 2, 262131, 4, 2, 196595, 4, 2, 131059, 4, 2, 65523, 4, 2, -13, 4, 2, -65549, 4, 2, -131085, 4, 2, -196621, 4, 2, -262157, 4, 2, -327693, 4, 2, -393229, 4, 2, -458765, 4, 2, -524301, 4, 2, -589837, 4, 2, -655373, 4, 2, -720909, 4, 2, -786445, 4, 1, -851956, 262148, 1, -786444, 131076, 4, -786443, 131076, 4, -786442, 131076, 4, -786441, 131076, 4, -786440, 131076, 4, -786439, 131076, 4, -786438, 131076, 4, -786437, 131076, 4, -786436, 131076, 4, -786435, 131076, 4, -786434, 131076, 4, -786433, 131076, 4, -851968, 131076, 4, -851967, 131076, 4, -851966, 131076, 4, -851965, 131076, 4, -851964, 131076, 4, -851963, 131076, 4, -851962, 131076, 4, -851961, 131076, 4, -851960, 131076, 4, -851959, 131076, 4, -851958, 131076, 4, -851957, 131076, 4)

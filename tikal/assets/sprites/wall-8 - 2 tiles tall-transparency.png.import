@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4yxtng15cubv"
-path="res://.godot/imported/spear_23.png-6c74431b06d99f51bb874a9d0ece21db.ctex"
+uid="uid://cude4c8ul8t6g"
+path="res://.godot/imported/wall-8 - 2 tiles tall-transparency.png-41cfdffb4fa47e32998e3814af9eed5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spear_23.png"
-dest_files=["res://.godot/imported/spear_23.png-6c74431b06d99f51bb874a9d0ece21db.ctex"]
+source_file="res://assets/sprites/wall-8 - 2 tiles tall-transparency.png"
+dest_files=["res://.godot/imported/wall-8 - 2 tiles tall-transparency.png-41cfdffb4fa47e32998e3814af9eed5c.ctex"]
 
 [params]
 
