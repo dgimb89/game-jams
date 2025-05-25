@@ -82,6 +82,7 @@ func _physics_process(delta):
 		is_attacking = true
 		attack_timer = attack_duration
 		has_spear = false
+		attack_cooldown_bar.set_colors(Color(0.5, 0, 0, 1))
 		attack_cooldown_timer = attack_cooldown
 		attack_cooldown_bar.value = 0
 		animated_sprite.play("attack")
@@ -127,3 +128,4 @@ func spawn_spear(direction: Vector2 = Vector2.ZERO) -> void:
 
 func _on_spear_picked_up() -> void:
 	has_spear = true
+	attack_cooldown_bar.set_colors(Color(0.5, 0.5, 0, 1))

@@ -26,6 +26,7 @@ func _update_color():
 	if fill_style:
 		fill_style.bg_color = interpolated_color
 
-func set_fill_color(color: Color):
+func set_colors(color: Color):
 	custom_fill_color = color
+	empty_color = color
 	_update_color() 
