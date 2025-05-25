@@ -6,7 +6,6 @@ extends CharacterBody2D
 @export var dash_cooldown = 3.0
 @export var attack_duration = 0.5
 @export var attack_cooldown = 3.0
-@export var spear_speed = 500.0
 
 var can_dash = true
 var is_dashing = false

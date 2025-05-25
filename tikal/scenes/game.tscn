@@ -307,7 +307,8 @@ sources/4 = SubResource("TileSetAtlasSource_lbhrr")
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 3
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
 
 [node name="TileMap" type="TileMap" parent="."]
 rotation = -0.00218153

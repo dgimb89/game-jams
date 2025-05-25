@@ -3,10 +3,10 @@ extends RigidBody2D
 signal spear_picked_up
 
 @export var stop_below_velocity = 1
-@export var initial_velocity_loss = 400  # Slower initial deceleration
-@export var max_velocity_loss = 1000      # Maximum deceleration
+@export var initial_velocity_loss = 100  # Slower initial deceleration
+@export var max_velocity_loss = 300      # Maximum deceleration
 @export var deceleration_curve = 1.0     # How quickly we reach max deceleration
-@export var spear_speed = 800.0
+@export var spear_speed = 500.0
 
 @onready var area: Area2D = $Area2D
 
